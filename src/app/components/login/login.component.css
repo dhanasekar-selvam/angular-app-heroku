@@ -1,0 +1,22 @@
+.login-form {
+  margin-top: 5%;
+  margin-right: 15%;
+  margin-bottom: 20%;
+  margin-left: 20%;
+}
+mat-card {
+  max-width: auto;
+  margin: auto;
+}
+.button-txt {
+  padding-left: 50px;
+}
+mat-form-field {
+  width: 100%;
+}
+.btn-space {
+  margin-right: 5px;
+}
+p {
+  text-align: right;
+}

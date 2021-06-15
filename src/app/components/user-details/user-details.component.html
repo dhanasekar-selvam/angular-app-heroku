@@ -1,0 +1,111 @@
+<h2 mat-dialog-title >Groots Information</h2>
+<mat-dialog-content>
+<div class="container change-width">
+    <div class="row">
+          <div class="col-xs-12 col-sm-9">
+        
+            <!-- User info -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+              <h4 class="panel-title">User info</h4>
+              </div>
+              <div class="panel-body">
+                <table class="table profile__table">
+                  <tbody>
+                    <tr>
+                        <th><strong>User Name</strong></th>
+                        <td>{{users.name}}</td>
+                      </tr>
+                    <tr>
+                      <th><strong>First Name</strong></th>
+                      <td>{{users.firstName}}</td>
+                    </tr>
+                    <tr>
+                      <th><strong>Last Name</strong></th>
+                      <td>{{users.lastName}}</td>
+                    </tr>
+                    <tr>
+                      <th><strong>Date of Birth</strong></th>
+                      <td>{{users.dob}}</td>
+                    </tr>
+                    <tr>
+                        <th><strong>Age</strong></th>
+                        <td>{{users.age}}</td>
+                      </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+    
+            <!-- Address -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+              <h4 class="panel-title">Address</h4>
+              </div>
+              <div class="panel-body">
+                <table class="table profile__table">
+                  <tbody>
+                    <tr>
+                      <th><strong>Address 1</strong></th>
+                      <td>{{users.more[0].address_line1}}</td>
+                    </tr>
+                    <tr>
+                      <th><strong>Address 2</strong></th>
+                      <td>{{users.more[0].address_line2}}</td>
+                    </tr>
+                    <tr>
+                        <th><strong>Address 3</strong></th>
+                        <td>{{users.more[0].address_line3}}</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>    
+          </div>
+          <div class="col-xs-12 col-sm-3">
+<br><br>            
+            <!-- Contact info -->
+            <div class="profile__contact-info">
+              <div class="profile__contact-info-item">
+           
+                <div class="profile__contact-info-body">
+                  <h5 class="profile__contact-info-heading">Work number</h5>
+{{users.more[0].phone}}                </div>
+              </div>
+              <div class="profile__contact-info-item">
+                <div class="profile__contact-info-icon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div class="profile__contact-info-body">
+                  <h5 class="profile__contact-info-heading">Mobile number</h5>
+{{users.more[0].phone}}                </div>
+              </div>
+              <div class="profile__contact-info-item">
+                <div class="profile__contact-info-icon">
+                  <i class="fa fa-envelope-square"></i>
+                </div>
+                <div class="profile__contact-info-body">
+                  <h5 class="profile__contact-info-heading">E-mail address</h5>
+                  <a href="mailto:admin@domain.com">{{users.email}}</a>
+                </div>
+              </div>
+              <div class="profile__contact-info-item">
+                <div class="profile__contact-info-icon">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="profile__contact-info-body">
+                  <h5 class="profile__contact-info-heading">Work address</h5>
+{{users.more[0].address_line1}}{{users.more[0].address_line2}}{{users.more[0].address_line3}}                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Close</button>
+    <button mat-raised-button color="primary" (click)="previous(users.id)" class="btn-space text-left" >Previous</button>
+    <button mat-raised-button color="primary" (click)="next(users.id)" class="text-right">Next</button>
+  </mat-dialog-actions>

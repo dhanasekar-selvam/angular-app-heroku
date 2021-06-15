@@ -1,0 +1,82 @@
+<img src="../../../assets/groot1.jpg"class="rounded mx-auto d-block" alt="I am Groot" width="400" height="400">
+<div class="Signup-form">
+    <mat-card>
+        <h1><mat-card-title class="text-primary">SignUp</mat-card-title></h1><br>
+    <mat-card-content>
+    <form [formGroup]="signUpForm">
+        <div>
+            <mat-form-field appearance="fill" class="mat-form-field-fluid example-full-width">
+                <mat-label>User Name<span style="color: red">*</span></mat-label>
+
+                <input matInput placeholder="Enter Name" formControlName="userName" [errorStateMatcher]="matcher" />
+                <mat-error>
+                  <h4>  <span *ngIf="!signUpForm.get('userName').valid &&
+                        signUpForm.get('userName').touched">Please
+                        enter User name</span></h4>
+                </mat-error>
+            </mat-form-field><br><br>
+            <mat-form-field appearance="fill" class="mat-form-field-fluid example-full-width col-lg-4">
+                <mat-label>Email<span style="color: red">*</span></mat-label>
+    
+                <input type="email" matInput placeholder="Enter Email" formControlName="email" [errorStateMatcher]="matcher" />
+                <mat-error>
+                    <div *ngIf="(!signUpForm.get('email').valid && signUpForm.get('email').touched) || signUpForm.get('email').dirty">
+                       <h4> <span class="error-message" *ngIf="signUpForm.get('email').errors?.required"> Please
+                            enter email</span>
+                    <span class="error-message" *ngIf="signUpForm.get('email').errors?.pattern"> Please
+                            enter valid email</span></h4>
+                    </div>
+                    <!-- <span
+                              *ngIf="(!customerform.get('emailvalue').valid && customerform.get('emailvalue').touched)">Please enter email</span>
+                              <span class="error-message" *ngIf="customerform.get('emailvalue').dirty"> & email is invalid</span>  -->
+    
+                </mat-error>
+            </mat-form-field><br><br>
+            <mat-form-field appearance="fill" class="mat-form-field-fluid example-full-width col-lg-4">
+                <mat-label>Password<span style="color: red">*</span></mat-label>
+    
+                <input type="password" matInput placeholder="Enter Password" formControlName="password" [errorStateMatcher]="matcher" />
+                <mat-error>
+                    <div *ngIf="(!signUpForm.get('password').valid && signUpForm.get('password').touched) || signUpForm.get('password').dirty">
+                        <h4> <span class="error-message" *ngIf="signUpForm.get('password').errors?.required"> Please
+                            enter password</span>
+               <span class="error-message" *ngIf="signUpForm.get('password').errors?.minlength"> Password length should greater than seven</span></h4>
+                    </div>
+                    <!-- <span
+                              *ngIf="(!customerform.get('emailvalue').valid && customerform.get('emailvalue').touched)">Please enter email</span>
+                              <span class="error-message" *ngIf="customerform.get('emailvalue').dirty"> & email is invalid</span>  -->
+    
+                </mat-error>
+            </mat-form-field><br><br>
+            <mat-form-field appearance="fill" class="mat-form-field-fluid example-full-width col-lg-4">
+                <mat-label>Confirm Password<span style="color: red">*</span></mat-label>
+    
+                <input type="password" matInput placeholder="Enter Confirm Password" formControlName="password2" [errorStateMatcher]="matcher" />
+                <mat-error>
+                    <div *ngIf="(!signUpForm.get('password2').valid && signUpForm.get('password2').touched) || signUpForm.get('password2').dirty">
+                        <h4> <span class="error-message" *ngIf="signUpForm.get('password2').errors?.required"> Please
+                            enter confirm password</span>
+                  <span class="error-message" *ngIf="signUpForm.get('password2').errors?.minlength"> Password length should greater than seven</span></h4>
+                    </div>
+                    <!-- <span
+                              *ngIf="(!customerform.get('emailvalue').valid && customerform.get('emailvalue').touched)">Please enter email</span>
+                              <span class="error-message" *ngIf="customerform.get('emailvalue').dirty"> & email is invalid</span>  -->
+    
+                </mat-error>
+            </mat-form-field>
+    
+
+
+           
+        </div>
+       
+    
+        
+    
+    </form>
+    
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="submit()" class="btn-space">Submit</button>
+    <button mat-raised-button color="primary" [routerLink]="['/']">Login</button>
+    </mat-card>
+    </div>

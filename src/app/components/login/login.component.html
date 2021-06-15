@@ -1,0 +1,53 @@
+<img src="../../../assets/groot.png"class="rounded mx-auto d-block" alt="I am Groot" width="400" height="400">
+<div class="login-form">
+    <mat-card>
+        <h1><mat-card-title class="text-primary">Login</mat-card-title></h1><br>
+    <mat-card-content>
+    <form [formGroup]="loginForm">
+        <div>
+    
+            <mat-form-field appearance="fill" class="mat-form-field-fluid example-full-width col-lg-4">
+                <mat-label>Email<span style="color: red">*</span></mat-label>
+    
+                <input type="email" matInput placeholder="Enter Email" formControlName="email" [errorStateMatcher]="matcher" />
+                
+            </mat-form-field>
+            <mat-error>
+                <div *ngIf="(!loginForm.get('email').valid && loginForm.get('email').touched) || loginForm.get('email').dirty">
+                   <h4> <span class="error-message" *ngIf="loginForm.get('email').errors?.required"> Please
+                        enter email</span>
+                    <span class="error-message" *ngIf="loginForm.get('email').errors?.pattern"> Please
+                        enter valid email</span></h4>
+                </div>
+                
+            </mat-error>
+         
+            <mat-form-field appearance="fill" class="mat-form-field-fluid example-full-width col-lg-4">
+                <mat-label>Password<span style="color: red">*</span></mat-label>
+    
+                <input type="password" matInput placeholder="Enter Password" formControlName="password" [errorStateMatcher]="matcher" />
+                
+            </mat-form-field>
+            <mat-error>
+                <div *ngIf="(!loginForm.get('password').valid && loginForm.get('password').touched) || loginForm.get('password').dirty">
+                    <h4> <span class="error-message" *ngIf="loginForm.get('password').errors?.required"> Please
+                        enter password</span>
+                    <span class="error-message" *ngIf="loginForm.get('password').errors?.minlength"> Password length should greater than seven</span></h4>
+                </div>
+               
+            </mat-error>
+           
+        </div>
+       
+    
+        
+    
+    </form>
+    
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="submit()" class="btn-space" >Login</button>
+    <button mat-raised-button color="primary" [routerLink]="['/signup']">SignUp</button>
+    </mat-card>
+    </div>
+    
+    
