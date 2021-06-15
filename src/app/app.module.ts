@@ -87,9 +87,3 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-declare module "@angular/core" {
-  interface ModuleWithProviders<T = any> {
-    ngModule: Type<T>;
-    providers?: Provider[];
-  }
-}

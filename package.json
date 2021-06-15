@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ngcc",
-    "heroku-postbuild": "ng build --prod"
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -57,9 +56,5 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
-  },
-  "engines": {
-    "node": "14.5.0",
-    "npm": "7.13.0"
   }
 }
